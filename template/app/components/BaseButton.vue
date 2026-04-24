@@ -29,56 +29,60 @@ function handleClick(event: MouseEvent) {
     :type="type"
     :disabled="disabled || loading"
     :aria-busy="loading"
+    :data-loading="loading || undefined"
     @click="handleClick"
   >
     <span v-if="loading" aria-hidden="true" class="spinner" />
-    <slot />
+    <span class="content">
+      <slot />
+    </span>
   </button>
 </template>
 
 <style scoped>
 .base-button {
   display: inline-flex;
-  min-height: 40px;
+  min-height: calc(var(--spacing-xl) + var(--spacing-sm));
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border: 1px solid #1d4ed8;
-  border-radius: 6px;
-  padding: 0 16px;
-  color: #ffffff;
+  gap: var(--spacing-sm);
+  border: var(--border-width-sm) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-none) var(--spacing-md);
+  color: var(--color-white);
   font: inherit;
-  font-weight: 600;
-  background: #1d4ed8;
+  font-weight: var(--font-weight-semibold);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-subtle);
   cursor: pointer;
 }
 
 .base-button:hover:not(:disabled) {
-  background: #1e40af;
+  filter: brightness(var(--state-hover-brightness));
 }
 
 .base-button:focus-visible {
-  outline: 3px solid #93c5fd;
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .base-button:disabled {
-  opacity: 0.6;
+  opacity: var(--state-disabled-opacity);
   cursor: not-allowed;
 }
 
 .spinner {
-  width: 14px;
-  height: 14px;
-  border: 2px solid currentColor;
-  border-top-color: transparent;
-  border-radius: 999px;
-  animation: spin 700ms linear infinite;
+  width: var(--spacing-md);
+  height: var(--spacing-md);
+  border: var(--border-width-md) solid currentColor;
+  border-top-color: var(--color-transparent);
+  border-radius: var(--radius-lg);
+  animation: spin var(--motion-fast) linear infinite;
 }
 
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    transform: rotate(var(--motion-rotation-full));
   }
 }
 </style>

@@ -1,29 +1,38 @@
 # UI Principles
 
-## Start With Intent
+Use these principles to keep interfaces consistent while product flows are still evolving.
 
-Start every screen from the user decision or action it supports. Do not begin by assembling components. Define the flow, state and data first.
+## Function Over Decoration
 
-## Design The States
+Every visual choice should help users understand state or complete an action.
 
-Every non-trivial UI should define:
+- Use a simple primary button for the main action instead of decorative variants.
+- Add visual treatment to errors, loading states and confirmations before adding decorative imagery.
 
-- Loading
-- Empty
-- Ready
-- Error
-- Success when completion must be confirmed
+## Consistency Over Creativity
 
-These states should be documented in the screen spec before implementation.
+Reuse established patterns before inventing a new one.
 
-## Prioritize Scanning
+- Use the same spacing between form fields on every screen.
+- Use the same button style for equivalent actions across pages.
 
-Users should understand page purpose, current state and available primary action quickly. Use clear hierarchy, predictable placement and restrained visual styling.
+## Minimal Cognitive Load
 
-## Keep Components Bounded
+Show only the information needed for the current step.
 
-Components should do one job. Extract a component when it reduces real repetition or clarifies a screen. Use composables for reusable behavior rather than hiding business logic in generic UI components.
+- Keep secondary actions visually quieter than the primary action.
+- Split long flows into clear screen states instead of dense all-in-one panels.
 
-## Build Vertical Slices
+## Clear Hierarchy
 
-Implement the smallest user-visible path that crosses the UI, state, data boundary and tests. Avoid broad infrastructure work before a specific flow needs it.
+The page purpose, current state and next action should be obvious at a glance.
+
+- Use one page-level heading and one primary action per screen state.
+- Use muted text for helper copy and primary text for decisions or results.
+
+## Explicit UI States
+
+Non-trivial UI must define loading, empty, error and success states before implementation.
+
+- Show a loading label or spinner while an action is pending.
+- Empty and error states must include the next useful action when recovery is possible.

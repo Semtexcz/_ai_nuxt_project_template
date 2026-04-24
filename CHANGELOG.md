@@ -8,12 +8,15 @@ The format follows Keep a Changelog, and this project uses semantic versioning o
 
 ### Changed
 
+- Refactor starter Vue components to consume design tokens for all visual values.
 - Keep generated `test` and `check` scripts focused on unit validation; Playwright E2E tests run through `test:e2e`.
 - Move Nuxt type checking out of production builds and into the explicit `typecheck` script.
 - Always include a small global stylesheet so generated projects do not contain an empty CSS file when Tailwind is disabled.
 
 ### Added
 
+- Minimal design system layer with UI principles, design tokens, typography, accessibility and component rules.
+- CSS token variables and optional Tailwind theme mapping.
 - Initial AI-first Nuxt 4 / Vue 3 Copier template.
 - Generated project structure for product, design, documentation and project planning.
 - Nuxt 4 app scaffold with TypeScript, ESLint, Vitest and optional Playwright, Pinia and Tailwind CSS.

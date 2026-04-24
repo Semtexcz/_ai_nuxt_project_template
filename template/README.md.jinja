@@ -43,6 +43,20 @@ Start with product intent and user flow. Define the screen, screen states, data 
 - `project/` contains task sequencing, backlog and completed work notes.
 - `CHANGELOG.md` records notable product and application changes.
 
+## Design System
+
+The project uses a minimal token-based design system:
+
+- `design/design-tokens.md` documents colors, spacing, radius and shadows.
+- `app/assets/css/tokens.css` exposes the same values as CSS variables.
+- `design/ui-principles.md`, `design/typography.md` and `design/accessibility.md` define UI constraints.
+- `docs/component-rules.md` explains how components should use tokens and states.
+{% if use_tailwind %}
+- `tailwind.config.ts` maps the same token values into the Tailwind theme.
+{% endif %}
+
+Change shared visual values in `design/design-tokens.md` and `app/assets/css/tokens.css` before using them in components. Do not invent one-off colors or spacing in Vue files.
+
 ## Development Rules
 
 - All code comments, UI labels, component names and developer-facing names must be in English.
@@ -55,6 +69,8 @@ Start with product intent and user flow. Define the screen, screen states, data 
 - Use stores only for shared application state.
 - Avoid global state for local UI state.
 - Do not put server-only logic into client code.
+- All UI styling must use design tokens.
+- Do not invent new colors, spacing, radius or shadows inside components.
 - Every non-trivial UI must handle loading, empty and error states.
 - Every task should update `project/TASK_SEQUENCE.md` if the backlog changes.
 - Every implementation task should include tests when practical.

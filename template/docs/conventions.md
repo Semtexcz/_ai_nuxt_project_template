@@ -11,6 +11,8 @@
 - Keep props and emits typed.
 - Keep components small and focused.
 - Prefer computed values over duplicated state.
+- Use design tokens for component styling.
+- Do not hardcode colors, spacing, radius or shadow values in components.
 
 ## Nuxt
 

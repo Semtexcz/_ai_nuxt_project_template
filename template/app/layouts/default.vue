@@ -8,14 +8,14 @@
 
 <style scoped>
 .app-shell {
-  min-height: 100vh;
-  color: #172026;
-  background: #f7f9fb;
+  min-height: var(--size-viewport-block);
+  color: var(--color-gray-900);
+  background: var(--color-gray-50);
 }
 
 main {
-  width: min(100% - 32px, 960px);
-  margin: 0 auto;
-  padding: 48px 0;
+  width: min(calc(var(--size-full) - var(--spacing-xl)), var(--layout-content));
+  margin: var(--spacing-none) auto;
+  padding: calc(var(--spacing-xl) + var(--spacing-md)) var(--spacing-none);
 }
 </style>

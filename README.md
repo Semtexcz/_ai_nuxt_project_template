@@ -44,6 +44,8 @@ It also creates an AI-first planning system:
 
 Vision -> Personas -> User flows -> Screens -> UI states -> Component model -> API contracts -> Tasks -> Implementation -> Tests -> ADRs
 
+Generated projects include a minimal design system layer with UI principles, design tokens, typography, accessibility guidance, component rules and CSS token variables. Tailwind projects also receive a token-mapped `tailwind.config.ts`.
+
 ## Development Workflow
 
 Use the product and design documents before editing code. Define user flows and screen states first, then create small implementation tasks that deliver one vertical slice at a time.

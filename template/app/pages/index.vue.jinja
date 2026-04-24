@@ -23,42 +23,43 @@ const { count, doubleCount, increment } = useExample()
 <style scoped>
 .home-page {
   display: grid;
-  gap: 20px;
+  gap: var(--spacing-lg);
 }
 
 .eyebrow {
-  margin: 0;
-  color: #1d4ed8;
-  font-size: 0.875rem;
-  font-weight: 700;
+  margin: var(--spacing-none);
+  color: var(--color-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
 
 h1 {
-  max-width: 720px;
-  margin: 0;
-  font-size: 2.5rem;
-  line-height: 1.1;
+  max-width: var(--layout-measure);
+  margin: var(--spacing-none);
+  font-size: var(--font-size-heading);
+  line-height: var(--line-height-tight);
 }
 
 .summary {
-  max-width: 640px;
-  margin: 0;
-  color: #4b5563;
-  font-size: 1.125rem;
+  max-width: var(--layout-copy);
+  margin: var(--spacing-none);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-lead);
 }
 
 .example-panel {
   display: grid;
-  max-width: 360px;
-  gap: 12px;
-  border: 1px solid #d8dee9;
-  border-radius: 8px;
-  padding: 20px;
-  background: #ffffff;
+  max-width: var(--layout-panel);
+  gap: var(--spacing-md);
+  border: var(--border-width-sm) solid var(--color-gray-300);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-subtle);
 }
 
 .example-panel p {
-  margin: 0;
+  margin: var(--spacing-none);
 }
 </style>

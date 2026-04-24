@@ -34,6 +34,10 @@ Start from product intent. Define the user flow, screen states, data requirement
 - Prefer small vertical slices.
 - Do not start from components; start from user flow and screen state.
 - Keep components small.
+- All UI must use design tokens from `design/design-tokens.md` and `app/assets/css/tokens.css`.
+- Do not invent new colors, spacing, radius or shadows inside components.
+- If a new visual pattern is needed, update `design/design-tokens.md` first.
+- Do not implement pixel-perfect design before flows are functional.
 - Use composables for reusable logic.
 - Use stores only for shared application state.
 - Avoid global state for local UI state.
@@ -64,6 +68,7 @@ A task is done only when:
 
 - The implemented behavior matches the linked PRD, user flow, screen spec and API contract.
 - Loading, empty, ready and error states are handled for every non-trivial UI path.
+- UI styling uses documented design tokens only.
 - Keyboard access, focus states, labels and error messaging are checked for changed screens.
 - Relevant unit, typecheck, lint and E2E coverage is added or an explicit test gap is recorded.
 - `{{ package_manager }} run check` passes locally before handoff.

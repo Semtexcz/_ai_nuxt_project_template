@@ -11,10 +11,14 @@ This project follows Nuxt 4 conventions and keeps application code inside `app/`
 - `app/stores/` contains shared application state when Pinia or another store is justified.
 - `app/utils/` contains pure helpers.
 - `server/api/` contains server routes and server-only logic.
+- `design/` contains UI principles, design tokens, typography, accessibility and wireframes.
+- `docs/component-rules.md` defines token-based component constraints.
 
 ## Design Direction
 
 Start from product documents, then define flows, screens, UI states and data requirements. The component model should come after screen states are known.
+
+Use `design/design-tokens.md` and `app/assets/css/tokens.css` for shared visual values. Add new tokens before adding new visual values to components.
 
 ## Data Boundary
 

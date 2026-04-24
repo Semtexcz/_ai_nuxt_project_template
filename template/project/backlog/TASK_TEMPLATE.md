@@ -37,6 +37,7 @@ Describe the user-visible result this task should deliver.
 
 - The vertical slice works from UI to data boundary.
 - Relevant states are implemented.
+- UI styling uses documented design tokens only.
 - Accessibility checks for keyboard order, focus and labels are complete.
 - Tests are added when practical.
 - The project check command passes, or the failing command and reason are recorded.
