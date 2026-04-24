@@ -6,6 +6,10 @@ The format follows Keep a Changelog, and this project uses semantic versioning o
 
 ## [Unreleased]
 
+Every notable template change after `0.1.0` must be documented here before release.
+
+## [0.1.0] - 2026-04-24
+
 ### Changed
 
 - Refactor starter Vue components to consume design tokens for all visual values.

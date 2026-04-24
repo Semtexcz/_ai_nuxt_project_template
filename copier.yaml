@@ -1,5 +1,6 @@
 _subdirectory: template
 _templates_suffix: .jinja
+version: 0.1.0
 _exclude:
   - "{% if not use_tailwind %}tailwind.config.ts{% else %}.copier-never-match{% endif %}"
 
