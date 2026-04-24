@@ -1,0 +1,32 @@
+# Testing Strategy
+
+Testing should match risk. Add the smallest useful test that would catch a real regression.
+
+## Unit Tests
+
+Use Vitest for composables, pure utilities and focused behavior. Unit tests should be fast and should not depend on broad UI setup unless Nuxt runtime behavior is required.
+
+## Component Tests
+
+Add component tests when component behavior is complex enough to regress independently from a full page flow.
+
+## E2E Tests
+
+{% if use_playwright -%}
+Use Playwright for critical user flows, routing, accessibility-sensitive interactions and high-value regressions.
+{% else -%}
+Playwright is disabled in this generated project. Enable it when critical user flows need browser-level coverage.
+{% endif -%}
+
+## Check Command
+
+`{{ package_manager }} run check` runs lint, typecheck and unit tests. Run it before handing work off for review.
+
+## Test Planning
+
+Each implementation task should state:
+
+- Unit coverage
+- E2E coverage
+- Manual checks
+- Known test gaps

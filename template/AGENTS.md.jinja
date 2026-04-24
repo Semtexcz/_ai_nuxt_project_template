@@ -1,0 +1,65 @@
+# AI Coding Agent Instructions
+
+This project is designed for AI-assisted frontend development. Follow these rules unless a human maintainer explicitly changes the project process.
+
+## Language Rules
+
+- All code comments, UI labels, component names and developer-facing names must be in English.
+- Product planning documents may be written in Czech or English.
+- Keep naming consistent across PRDs, flows, screens, components, composables and tests.
+
+## Required Reading Before Implementation
+
+Before implementation, read the relevant:
+
+- PRD in `product/prds/`
+- user flow in `product/user-flows/`
+- screen spec in `product/screens/`
+- feature spec in `product/features/`
+- task in `project/backlog/`
+- related architecture or API contract in `docs/`
+
+If any required document is missing or contradicts another document, update the task with the gap before editing code.
+
+## Workflow
+
+Use this sequence:
+
+Vision -> Personas -> User flows -> Screens -> UI states -> Component model -> API contracts -> Tasks -> Implementation -> Tests -> ADRs
+
+Start from product intent. Define the user flow, screen states, data requirements, component tree and API contracts before building UI. Implement vertical slices that include the UI, state, API integration and tests needed for one user-visible outcome.
+
+## Frontend Rules
+
+- Prefer small vertical slices.
+- Do not start from components; start from user flow and screen state.
+- Keep components small.
+- Use composables for reusable logic.
+- Use stores only for shared application state.
+- Avoid global state for local UI state.
+- Do not put server-only logic into client code.
+- Every non-trivial UI must handle loading, empty and error states.
+- Use `<script setup lang="ts">` in Vue components.
+- Keep accessibility requirements visible while designing screen states.
+
+## State And Data
+
+- Local UI state belongs in the component that owns the interaction.
+- Reusable logic belongs in `app/composables/`.
+- Shared application state belongs in `app/stores/` only when multiple distant screens or components need it.
+- Server-only secrets, privileged API calls and persistence logic belong in `server/`.
+
+## Tasks And Tests
+
+- Every task should update `project/TASK_SEQUENCE.md` if the backlog changes.
+- Every implementation task should include tests when practical.
+- User-visible changes should update `CHANGELOG.md`.
+- Unit-test composables and pure logic.
+- Use E2E tests for critical flows and high-value regressions.
+- Keep tests focused on behavior rather than implementation details.
+
+## Dependencies And Decisions
+
+- Do not add large dependencies without an ADR.
+- Record significant architecture, state-management, API and design-system decisions in `docs/decisions/`.
+- Prefer Nuxt conventions and existing project patterns before adding custom abstractions.

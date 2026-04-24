@@ -1,0 +1,40 @@
+{
+  "name": "{{ project_slug }}",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "{{ project_description }}",
+  "author": "{{ author_name }}",
+  "packageManager": "{% if package_manager == 'pnpm' %}pnpm@10.20.0{% elif package_manager == 'npm' %}npm@11.6.2{% else %}yarn@4.10.3{% endif %}",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "test": "{{ package_manager }} run test:unit{% if use_playwright %} && {{ package_manager }} run test:e2e{% endif %}",
+    "test:unit": "vitest run",
+    "test:e2e": "{% if use_playwright %}playwright test{% else %}echo \"Playwright is disabled for this project.\"{% endif %}",
+    "check": "{{ package_manager }} run lint && {{ package_manager }} run typecheck && {{ package_manager }} run test:unit",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.0"{% if use_pinia %},
+    "@pinia/nuxt": "^0.11.0",
+    "pinia": "^3.0.0"{% endif %}{% if use_tailwind %},
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0"{% endif %}
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.0.0",
+    "@nuxt/test-utils": "^4.0.0",
+    "@vue/test-utils": "^2.4.0",
+    "eslint": "^9.0.0",
+    "happy-dom": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.0.0",
+    "vue-tsc": "^3.0.0"{% if use_playwright %},
+    "@playwright/test": "^1.50.0"{% endif %}
+  }
+}

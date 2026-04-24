@@ -1,0 +1,46 @@
+_subdirectory: template
+_templates_suffix: .jinja
+
+project_name:
+  type: str
+  help: Human-readable project name.
+  default: AI Nuxt Frontend
+
+project_slug:
+  type: str
+  help: Package and directory-safe project slug.
+  default: "{{ project_name | lower | replace(' ', '-') | replace('_', '-') }}"
+
+project_description:
+  type: str
+  help: Short project description.
+  default: AI-first Nuxt 4 frontend application.
+
+package_manager:
+  type: str
+  help: Package manager used by the generated project.
+  default: pnpm
+  choices:
+    - pnpm
+    - npm
+    - yarn
+
+use_tailwind:
+  type: bool
+  help: Include Tailwind CSS support.
+  default: false
+
+use_pinia:
+  type: bool
+  help: Include Pinia support.
+  default: false
+
+use_playwright:
+  type: bool
+  help: Include Playwright E2E testing.
+  default: true
+
+author_name:
+  type: str
+  help: Project author name.
+  default: ""

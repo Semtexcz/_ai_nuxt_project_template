@@ -1,0 +1,25 @@
+# State Management
+
+Use the smallest state scope that can support the feature.
+
+## Local State
+
+Use component-local state for local UI concerns such as open menus, selected tabs, temporary form fields and transient loading state.
+
+## Composables
+
+Use composables for reusable behavior, derived state and shared interaction logic. Keep composables small and testable.
+
+## Stores
+
+Use stores only for shared application state needed across distant components or routes. Avoid storing data globally just to avoid passing props.
+
+{% if use_pinia -%}
+Pinia is enabled for this project. Place stores in `app/stores/` and keep actions focused on application state transitions.
+{% else -%}
+Pinia is not enabled. Add it only when shared application state justifies it, and record the decision if it changes project architecture.
+{% endif -%}
+
+## Server State
+
+Server data should be loaded through Nuxt data utilities or server routes. Do not duplicate server state globally unless there is a clear caching or coordination need.

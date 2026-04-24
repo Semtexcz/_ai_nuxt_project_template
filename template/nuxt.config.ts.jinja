@@ -1,0 +1,28 @@
+export default defineNuxtConfig({
+  compatibilityDate: '2026-04-24',
+  devtools: { enabled: true },
+
+  future: {
+    compatibilityVersion: 4,
+  },
+
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/test-utils/module'{% if use_pinia %},
+    '@pinia/nuxt'{% endif %}
+  ],
+
+  typescript: {
+    strict: true,
+    typeCheck: true,
+  }{% if use_tailwind %},
+
+  vite: {
+    plugins: [
+      // Tailwind CSS v4 uses a Vite plugin instead of a Nuxt module.
+      (await import('@tailwindcss/vite')).default(),
+    ],
+  },
+
+  css: ['~/assets/css/main.css']{% endif %}
+})

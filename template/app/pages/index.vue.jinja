@@ -1,0 +1,64 @@
+<script setup lang="ts">
+const { count, doubleCount, increment } = useExample()
+</script>
+
+<template>
+  <section class="home-page">
+    <p class="eyebrow">{{ project_name }}</p>
+    <h1>{{ project_description }}</h1>
+    <p class="summary">
+      Start from product intent, define the screen state, then implement one small vertical slice.
+    </p>
+
+    <div class="example-panel" aria-label="Example interaction">
+      <p>Count: {% raw %}{{ count }}{% endraw %}</p>
+      <p>Double count: {% raw %}{{ doubleCount }}{% endraw %}</p>
+      <BaseButton @click="increment">
+        Increment
+      </BaseButton>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.home-page {
+  display: grid;
+  gap: 20px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #1d4ed8;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 720px;
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+.summary {
+  max-width: 640px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+
+.example-panel {
+  display: grid;
+  max-width: 360px;
+  gap: 12px;
+  border: 1px solid #d8dee9;
+  border-radius: 8px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.example-panel p {
+  margin: 0;
+}
+</style>

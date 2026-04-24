@@ -1,0 +1,7 @@
+export default defineEventHandler(() => {
+  return {
+    status: 'ok',
+    service: '{{ project_slug }}',
+    timestamp: new Date().toISOString(),
+  }
+})

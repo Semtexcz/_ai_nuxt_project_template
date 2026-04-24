@@ -1,0 +1,67 @@
+# {{ project_name }}
+
+{{ project_description }}
+
+This project is a Nuxt 4 / Vue 3 frontend designed for AI-assisted development. The repository includes product, design, architecture and task documents so implementation can start from user intent rather than isolated components.
+
+## Setup
+
+```bash
+{{ package_manager }} install
+{{ package_manager }} run dev
+```
+
+## Commands
+
+- `{{ package_manager }} run dev` starts the Nuxt development server.
+- `{{ package_manager }} run build` builds the production app.
+- `{{ package_manager }} run preview` previews the production build.
+- `{{ package_manager }} run lint` runs Nuxt-aware ESLint.
+- `{{ package_manager }} run typecheck` runs Nuxt TypeScript checks.
+- `{{ package_manager }} run test:unit` runs Vitest unit tests.
+- `{{ package_manager }} run test:e2e` {% if use_playwright %}runs Playwright E2E tests{% else %}prints a disabled message because Playwright was not selected{% endif %}.
+- `{{ package_manager }} run check` runs lint, typecheck and unit tests.
+
+## AI-First Workflow
+
+Use this sequence for meaningful frontend work:
+
+Vision -> Personas -> User flows -> Screens -> UI states -> Component model -> API contracts -> Tasks -> Implementation -> Tests -> ADRs
+
+Start with product intent and user flow. Define the screen, screen states, data requirements, component tree and API contract before creating implementation tasks. Implement small vertical slices that can be reviewed and tested independently.
+
+## Folder Structure
+
+- `app/` contains Nuxt app code using the Nuxt 4 directory structure.
+- `server/api/` contains server routes.
+- `tests/unit/` contains Vitest tests.
+- `tests/e2e/` contains Playwright tests when enabled.
+- `product/` contains product intent, user flows, screen specs, features and PRDs.
+- `design/` contains UI principles, accessibility notes, design tokens and wireframes.
+- `docs/` contains architecture, conventions, API contracts, testing strategy and ADRs.
+- `project/` contains task sequencing, backlog and completed work notes.
+- `CHANGELOG.md` records notable product and application changes.
+
+## Development Rules
+
+- All code comments, UI labels, component names and developer-facing names must be in English.
+- Planning documents may be in Czech or English.
+- Read the relevant PRD, user flow, screen spec and task before implementation.
+- Prefer small vertical slices over broad horizontal refactors.
+- Do not start from components. Start from user flow and screen state.
+- Keep components small and focused.
+- Use composables for reusable logic.
+- Use stores only for shared application state.
+- Avoid global state for local UI state.
+- Do not put server-only logic into client code.
+- Every non-trivial UI must handle loading, empty and error states.
+- Every task should update `project/TASK_SEQUENCE.md` if the backlog changes.
+- Every implementation task should include tests when practical.
+- Do not add large dependencies without an ADR.
+- Update `CHANGELOG.md` for user-visible changes, notable technical changes and release preparation.
+
+## Optional Features
+
+- Pinia: {% if use_pinia %}enabled{% else %}disabled{% endif %}.
+- Tailwind CSS: {% if use_tailwind %}enabled{% else %}disabled{% endif %}.
+- Playwright: {% if use_playwright %}enabled{% else %}disabled{% endif %}.
