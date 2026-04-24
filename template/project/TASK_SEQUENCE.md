@@ -5,7 +5,7 @@ Use this file to keep implementation order explicit. Update it whenever backlog 
 ## Current Sequence
 
 1. Read `product/vision.md`.
-2. Create or update a persona in `product/personas/`.
+2. Create or update a persona from `product/personas/PERSONA_TEMPLATE.md`.
 3. Create a user flow from `product/user-flows/USER_FLOW_TEMPLATE.md`.
 4. Create screen specs from `product/screens/SCREEN_TEMPLATE.md`.
 5. Define API contracts in `docs/api-contracts.md`.

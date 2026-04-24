@@ -37,5 +37,7 @@ Describe the user-visible result this task should deliver.
 
 - The vertical slice works from UI to data boundary.
 - Relevant states are implemented.
+- Accessibility checks for keyboard order, focus and labels are complete.
 - Tests are added when practical.
+- The project check command passes, or the failing command and reason are recorded.
 - `project/TASK_SEQUENCE.md` is updated if backlog order changed.

@@ -6,6 +6,12 @@ The format follows Keep a Changelog, and this project uses semantic versioning o
 
 ## [Unreleased]
 
+### Changed
+
+- Keep generated `test` and `check` scripts focused on unit validation; Playwright E2E tests run through `test:e2e`.
+- Move Nuxt type checking out of production builds and into the explicit `typecheck` script.
+- Always include a small global stylesheet so generated projects do not contain an empty CSS file when Tailwind is disabled.
+
 ### Added
 
 - Initial AI-first Nuxt 4 / Vue 3 Copier template.
@@ -13,3 +19,5 @@ The format follows Keep a Changelog, and this project uses semantic versioning o
 - Nuxt 4 app scaffold with TypeScript, ESLint, Vitest and optional Playwright, Pinia and Tailwind CSS.
 - AI coding agent rules in `AGENTS.md`.
 - Starter markdown templates for PRDs, features, screens, user flows, tasks and ADRs.
+- Persona starter template and explicit generated Definition of Done.
+- Minimal component test covering the starter button behavior.

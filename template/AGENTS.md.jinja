@@ -58,6 +58,17 @@ Start from product intent. Define the user flow, screen states, data requirement
 - Use E2E tests for critical flows and high-value regressions.
 - Keep tests focused on behavior rather than implementation details.
 
+## Definition Of Done
+
+A task is done only when:
+
+- The implemented behavior matches the linked PRD, user flow, screen spec and API contract.
+- Loading, empty, ready and error states are handled for every non-trivial UI path.
+- Keyboard access, focus states, labels and error messaging are checked for changed screens.
+- Relevant unit, typecheck, lint and E2E coverage is added or an explicit test gap is recorded.
+- `{{ package_manager }} run check` passes locally before handoff.
+- `CHANGELOG.md`, task notes and ADRs are updated when the change affects users, architecture or dependencies.
+
 ## Dependencies And Decisions
 
 - Do not add large dependencies without an ADR.

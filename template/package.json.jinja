@@ -12,10 +12,10 @@
     "preview": "nuxt preview",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "test": "{{ package_manager }} run test:unit{% if use_playwright %} && {{ package_manager }} run test:e2e{% endif %}",
+    "test": "{{ package_manager }} run test:unit",
     "test:unit": "vitest run",
     "test:e2e": "{% if use_playwright %}playwright test{% else %}echo \"Playwright is disabled for this project.\"{% endif %}",
-    "check": "{{ package_manager }} run lint && {{ package_manager }} run typecheck && {{ package_manager }} run test:unit",
+    "check": "{{ package_manager }} run lint && {{ package_manager }} run typecheck && {{ package_manager }} run test",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

@@ -50,6 +50,29 @@ Use the product and design documents before editing code. Define user flows and 
 
 Large technical decisions, new state-management patterns and significant dependencies should be recorded as ADRs in `docs/decisions/`.
 
+## Validate Template Changes
+
+After changing template files, render and test a fresh project:
+
+```bash
+copier copy . ../tmp-generated-frontend --defaults --overwrite
+cd ../tmp-generated-frontend
+pnpm install
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+pnpm exec playwright install chromium
+pnpm test:e2e
+```
+
+Also render optional branches when changing Jinja conditionals:
+
+```bash
+copier copy . /tmp/nuxt-template-flags-on --defaults --overwrite -d use_tailwind=true -d use_pinia=true -d use_playwright=true
+copier copy . /tmp/nuxt-template-flags-off --defaults --overwrite -d use_tailwind=false -d use_pinia=false -d use_playwright=false
+```
+
 ## Versioning
 
 Template changes are tracked in `CHANGELOG.md`. Generated projects also include their own `CHANGELOG.md` for product and application changes.

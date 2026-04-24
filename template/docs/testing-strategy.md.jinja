@@ -14,13 +14,14 @@ Add component tests when component behavior is complex enough to regress indepen
 
 {% if use_playwright -%}
 Use Playwright for critical user flows, routing, accessibility-sensitive interactions and high-value regressions.
+Install browsers with `{{ package_manager }} exec playwright install` before the first local E2E run.
 {% else -%}
 Playwright is disabled in this generated project. Enable it when critical user flows need browser-level coverage.
 {% endif -%}
 
 ## Check Command
 
-`{{ package_manager }} run check` runs lint, typecheck and unit tests. Run it before handing work off for review.
+`{{ package_manager }} run check` runs lint, typecheck and unit tests. Run it before handing work off for review. E2E tests are separate because they require installed browser binaries.
 
 ## Test Planning
 

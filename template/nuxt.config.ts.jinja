@@ -14,15 +14,14 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
-    typeCheck: true,
-  }{% if use_tailwind %},
+  },
+
+  css: ['~/assets/css/main.css']{% if use_tailwind %},
 
   vite: {
     plugins: [
       // Tailwind CSS v4 uses a Vite plugin instead of a Nuxt module.
       (await import('@tailwindcss/vite')).default(),
     ],
-  },
-
-  css: ['~/assets/css/main.css']{% endif %}
+  }{% endif %}
 })
