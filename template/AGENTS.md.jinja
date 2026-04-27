@@ -36,7 +36,8 @@ Start from product intent. Define the user flow, screen states, data requirement
 
 - Prefer small vertical slices.
 - Do not start from components; start from user flow and screen state.
-- Keep components small.
+- Keep pages, layouts, components, composables, stores and utilities small, focused and easy to maintain.
+- Split files when they start mixing unrelated responsibilities or become difficult to scan.
 - All UI must use design tokens from `design/design-tokens.md` and `app/assets/css/tokens.css`.
 - Do not invent new colors, spacing, radius or shadows inside components.
 - If a new visual pattern is needed, update `design/design-tokens.md` first.
@@ -59,6 +60,7 @@ Start from product intent. Define the user flow, screen states, data requirement
 ## Tasks And Tests
 
 - Every task should update `project/TASK_SEQUENCE.md` if the backlog changes.
+- When a task is completed, move its task file to `project/backlog/done/`.
 - Every implementation task should include tests when practical.
 - Every code change must update `CHANGELOG.md`.
 - Every code change must be finished with a conventional commit.
@@ -78,6 +80,7 @@ A task is done only when:
 - `{{ package_manager }} run check` passes locally before handoff.
 - `CHANGELOG.md`, task notes and ADRs are updated when the change affects users, architecture or dependencies.
 - Code changes are documented in `CHANGELOG.md` and committed with a conventional commit.
+- The completed task file is moved to `project/backlog/done/`.
 
 ## Dependencies And Decisions
 

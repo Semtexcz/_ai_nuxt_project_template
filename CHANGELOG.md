@@ -15,8 +15,10 @@ Every notable template change after `0.1.0` must be documented here before relea
 ### Changed
 
 - Align generated vision, README, task sequence and task template docs with PRD, feature, relevant docs and ADR workflow artifacts.
+- Clarify generated code organization guidance so pages, layouts, components, composables, stores and utilities stay small and maintainable.
 - Require generated projects to document every code change in `CHANGELOG.md` and finish it with a conventional commit.
 - Clarify repository agent rules for template version and changelog updates.
+- Require generated projects to move completed task files to `project/backlog/done/`.
 
 ## [0.1.0] - 2026-04-24
 

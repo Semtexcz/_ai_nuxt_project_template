@@ -14,6 +14,8 @@ This project follows Nuxt 4 conventions and keeps application code inside `app/`
 - `design/` contains UI principles, design tokens, typography, accessibility and wireframes.
 - `docs/component-rules.md` defines token-based component constraints.
 
+Keep each layer organized around clear responsibilities. Pages, layouts, components, composables, stores and utilities should stay small enough to scan, test and maintain without mixing unrelated concerns.
+
 ## Design Direction
 
 Start from product documents, then define flows, screens, UI states and data requirements. The component model should come after screen states are known.

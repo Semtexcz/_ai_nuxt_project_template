@@ -62,7 +62,8 @@ Change shared visual values in `design/design-tokens.md` and `app/assets/css/tok
 - Read the relevant PRD when needed, feature spec, user flow, screen spec, docs and task before implementation.
 - Prefer small vertical slices over broad horizontal refactors.
 - Do not start from components. Start from user flow and screen state.
-- Keep components small and focused.
+- Keep pages, layouts, components, composables, stores and utilities small, focused and easy to maintain.
+- Split files when they start mixing unrelated responsibilities or become difficult to scan.
 - Use composables for reusable logic.
 - Use stores only for shared application state.
 - Avoid global state for local UI state.
