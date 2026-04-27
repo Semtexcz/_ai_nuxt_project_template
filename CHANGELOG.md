@@ -15,6 +15,7 @@ Every notable template change after `0.1.0` must be documented here before relea
 ### Changed
 
 - Align generated vision, README, task sequence and task template docs with PRD, feature, relevant docs and ADR workflow artifacts.
+- Require generated projects to document every code change in `CHANGELOG.md` and finish it with a conventional commit.
 
 ## [0.1.0] - 2026-04-24
 
