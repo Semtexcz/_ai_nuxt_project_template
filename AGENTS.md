@@ -20,6 +20,8 @@ This repository is a Copier template, not a generated Nuxt app. Keep template fi
 
 Generated projects should guide agents through:
 
-Vision -> Personas -> User flows -> Screens -> UI states -> Component model -> API contracts -> Tasks -> Implementation -> Tests -> ADRs
+Vision -> Personas -> PRDs for large changes -> Features -> User flows -> Screens and UI states -> Relevant design and technical docs -> Tasks -> Implementation -> Tests -> ADRs
+
+Generated projects should use `docs/workflow.md` as the source of truth for the full product-to-implementation workflow.
 
 Every starter document should have meaningful content. Do not leave empty markdown files.

@@ -8,6 +8,14 @@ The format follows Keep a Changelog, and this project uses semantic versioning o
 
 Every notable template change after `0.1.0` must be documented here before release.
 
+### Added
+
+- Add generated `docs/workflow.md` as the source of truth for product-to-implementation workflow guidance.
+
+### Changed
+
+- Align generated vision, README, task sequence and task template docs with PRD, feature, relevant docs and ADR workflow artifacts.
+
 ## [0.1.0] - 2026-04-24
 
 ### Changed

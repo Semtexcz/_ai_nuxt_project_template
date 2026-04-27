@@ -42,13 +42,13 @@ The template creates a Nuxt 4 app using the `app/` directory structure, server A
 
 It also creates an AI-first planning system:
 
-Vision -> Personas -> User flows -> Screens -> UI states -> Component model -> API contracts -> Tasks -> Implementation -> Tests -> ADRs
+Vision -> Personas -> PRDs for large changes -> Features -> User flows -> Screens and UI states -> Relevant design and technical docs -> Tasks -> Implementation -> Tests -> ADRs
 
 Generated projects include a minimal design system layer with UI principles, design tokens, typography, accessibility guidance, component rules and CSS token variables. Tailwind projects also receive a token-mapped `tailwind.config.ts`.
 
 ## Development Workflow
 
-Use the product and design documents before editing code. Define user flows and screen states first, then create small implementation tasks that deliver one vertical slice at a time.
+Use `docs/workflow.md` in generated projects as the source of truth for the product-to-implementation workflow. Define user flows and screen states first, read the relevant design and technical documents, then create small implementation tasks that deliver one vertical slice at a time.
 
 Large technical decisions, new state-management patterns and significant dependencies should be recorded as ADRs in `docs/decisions/`.
 
