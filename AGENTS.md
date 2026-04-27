@@ -15,6 +15,7 @@ This repository is a Copier template, not a generated Nuxt app. Keep template fi
 - Keep optional features fully conditional, including config, dependencies and docs.
 - Prefer current Nuxt 4 conventions, including the `app/` directory structure.
 - Keep `CHANGELOG.md` updated for notable template changes.
+- Every template change must update the `version` field in `copier.yaml` and be documented in `CHANGELOG.md`.
 
 ## Generated Project Workflow
 
